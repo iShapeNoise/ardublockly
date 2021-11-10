@@ -1,91 +1,130 @@
-# ArduBlockly
+# Ardublockly
+Ardublockly is a visual programming editor for Arduino. It is based on Google's [Blockly][1], which has been forked to generate [Arduino][15] code.
+
+The `ArdublocklyServer` Python package initialises a local server to be able to compile and load the Arduino code using the [Arduino IDE][2].
+
+This is all packaged in a self contained executable desktop application for Windows, Mac OS X, and Linux.
+
+![Ardublockly desktop program screenshot][desktop_screeshot]
 
 
+## Features
+* Generates Arduino code with visual drag-and-drop blocks
+* Uploads the code to an Arduino Board
+* Useful "code block warnings"
+* Compatible with a wide range of official Arduino Boards
+* Works on Windows / Linux / Mac OS X
 
-## Getting started
+Ardublockly is still under development and a few features are not yet implemented. A to-do list can be found in the [TODO.md][3] file.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+Currently tested under Windows with Python 2.7 and 3.4 and in Linux and MacOS X with Python 2.7.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
 
-## Add your files
-
-- [ ] [Create](https://gitlab.com/-/experiment/new_project_readme_content:f3b6b7a63ec540e545613b0a99f4ada8?https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://gitlab.com/-/experiment/new_project_readme_content:f3b6b7a63ec540e545613b0a99f4ada8?https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://gitlab.com/-/experiment/new_project_readme_content:f3b6b7a63ec540e545613b0a99f4ada8?https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+## Cloning the repository
+Please note that there are submodules in the repository that need initialisation. So, to correctly clone the Ardublockly repository:
 
 ```
-cd existing_repo
-git remote add origin https://gitlab.com/DigitalStages/ardublockly.git
-git branch -M main
-git push -uf origin main
+git clone https://github.com/carlosperate/ardublockly.git
+cd ardublockly
+git submodule update --init --recursive
 ```
 
-## Integrate with your tools
 
-- [ ] [Set up project integrations](https://gitlab.com/-/experiment/new_project_readme_content:f3b6b7a63ec540e545613b0a99f4ada8?https://docs.gitlab.com/ee/user/project/integrations/)
+## Installing
+The desktop application is available for Windows/Mac/Linux and runs as a stand-alone executable that can be downloaded from the [Ardublockly repository releases page][4].
 
-## Collaborate with your team
+You will also need the [Arduino IDE version 1.6.x or higher][2].
 
-- [ ] [Invite team members and collaborators](https://gitlab.com/-/experiment/new_project_readme_content:f3b6b7a63ec540e545613b0a99f4ada8?https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://gitlab.com/-/experiment/new_project_readme_content:f3b6b7a63ec540e545613b0a99f4ada8?https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://gitlab.com/-/experiment/new_project_readme_content:f3b6b7a63ec540e545613b0a99f4ada8?https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Automatically merge when pipeline succeeds](https://gitlab.com/-/experiment/new_project_readme_content:f3b6b7a63ec540e545613b0a99f4ada8?https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+#### Development builds
+You can also test __UNSTABLE__ development builds automatically generated every time an update is added to the GitHub repository:
 
-## Test and Deploy
+| Linux build         | Windows build       | Mac OS X build       |
+|:-------------------:|:-------------------:|:--------------------:|
+| [![Linux Build Status](https://circleci.com/gh/carlosperate/ardublockly/tree/master.svg?style=svg)](https://circleci.com/gh/carlosperate/ardublockly/tree/master) | [![Windows Build status](https://ci.appveyor.com/api/projects/status/t877g920hdiifc2i?svg=true)](https://ci.appveyor.com/project/carlosperate/ardublockly) | [![Mac Build Status](https://travis-ci.org/carlosperate/ardublockly.svg?branch=master)](https://travis-ci.org/carlosperate/ardublockly) |
+| [Download Link][12] | [Download Link][13] | [Download Link][14]  |
 
-Use the built-in continuous integration in GitLab.
+#### "Core version" (Python server only)
+If you prefer, the core software can be used by running only the Python server, which loads the web interface on your local browser (Chrome recommended).
 
-- [ ] [Get started with GitLab CI/CD](https://gitlab.com/-/experiment/new_project_readme_content:f3b6b7a63ec540e545613b0a99f4ada8?https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://gitlab.com/-/experiment/new_project_readme_content:f3b6b7a63ec540e545613b0a99f4ada8?https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://gitlab.com/-/experiment/new_project_readme_content:f3b6b7a63ec540e545613b0a99f4ada8?https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://gitlab.com/-/experiment/new_project_readme_content:f3b6b7a63ec540e545613b0a99f4ada8?https://docs.gitlab.com/ee/user/clusters/agent/)
+Full installation instructions for this version can be found in [this Github repository Wiki][5].
 
-***
+The quick version: Clone this repository, initialise all submodules, and execute:
 
-# Editing this README
+```
+python start.py
+```
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!).  Thank you to [makeareadme.com](https://gitlab.com/-/experiment/new_project_readme_content:f3b6b7a63ec540e545613b0a99f4ada8?https://www.makeareadme.com/) for this template.
+This will work on Windows, Linux (including ARM) and Mac OS X, with Python >2.7 or >3.4
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
 
-## Name
-Choose a self-explaining name for your project.
+## Running
+1. [Install Ardublockly][5].
+2. Install the [Arduino IDE][2] version 1.6.x or higher (latest version is always recommended).
+3. Run Ardublockly as defined in your installation method.
+3. Configure Ardublockly to locate the Arduino IDE [following these instructions][6].
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+## Online Demos
+A demo of the latest release of Ardublockly main interface can be found in the following two links (to load the code into an Arduino it requires the full Ardublockly application to be downloaded and run on your computer):
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+#### [Ardublockly][10]
+![WebApp screenshot responsive design][web_screenshot_responsive]
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+#### [Ardublockly classic][11]
+![WebApp screenshot][web_screenshot_classic]
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+## Documentation
+The documentation, including installation instructions, configuration instructions, and developer information can be found in the [Ardublockly GitHub repository Wiki][7].
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+To download the documentation you can git clone the wiki data:
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+```
+git clone https://github.com/carlosperate/ardublockly.wiki.git
+```
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+## Credit
+This project has been inspired by [BlocklyDuino][16].
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+Blockly original source is Copyright of Google Inc. [https://developers.google.com/blockly/][1]. A list of changes to the Blockly fork can be found in the [Blockly subdirectory README][17] file.
+
 
 ## License
-For open source projects, say how it is licensed.
+Copyright (c) 2016 carlosperate https://github.com/carlosperate/
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+Unless stated otherwise, the source code of this projects is
+licensed under the Apache License, Version 2.0 (the "License");
+you may not use any of the licensed files within this project
+except in compliance with the License.
 
+The full document can be found in the [LICENSE][9] file.
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+
+[1]: https://developers.google.com/blockly/
+[2]: http://www.arduino.cc/en/main/software/
+[3]: TODO.md
+[4]: https://github.com/carlosperate/ardublockly/releases/
+[5]: https://github.com/carlosperate/ardublockly/wiki/Installing-Ardublockly
+[6]: https://github.com/carlosperate/ardublockly/wiki/Configure-Ardublockly
+[7]: https://github.com/carlosperate/ardublockly/wiki
+[8]: https://github.com/carlosperate/ardublockly/compare/blockly-original...master
+[9]: https://github.com/carlosperate/ardublockly/blob/master/LICENSE
+[10]: http://ardublockly.embeddedlog.com/demo/index.html
+[11]: http://ardublockly.embeddedlog.com/demo/classic/index.html
+[12]: http://ardublockly-builds.s3-website-us-west-2.amazonaws.com/index.html?prefix=linux/
+[13]: http://ardublockly-builds.s3-website-us-west-2.amazonaws.com/index.html?prefix=windows/
+[14]: http://ardublockly-builds.s3-website-us-west-2.amazonaws.com/index.html?prefix=mac/
+[15]: http://www.arduino.cc
+[16]: https://github.com/BlocklyDuino/BlocklyDuino
+[17]: blockly/README.md
+
+[desktop_screeshot]: http://carlosperate.github.io/ardublockly/images/screenshot_desktop_1.png
+[web_screenshot_responsive]: http://carlosperate.github.io/ardublockly/images/screenshot_material_all_small.jpg
+[web_screenshot_classic]: http://carlosperate.github.io/ardublockly/images/screenshot_1.png
