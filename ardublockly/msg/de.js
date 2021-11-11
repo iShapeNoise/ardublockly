@@ -42,26 +42,26 @@ Ardublockly.LOCALISED_TEXT = {
   arduinoOpErrorIdContext_50: "Unerwarteter Fehler von Arduino IDE",
   arduinoOpErrorIdContext_51: "Konnte Sketch Datei nicht erzeugen",
   arduinoOpErrorIdContext_52: "Ungültiger Pfad um Sketch Datei intern zu erzeugen",
-  arduinoOpErrorIdContext_53: "Unable to find Arduino IDE<br>" +
-                              "The compiler directory has not been set correctly.<br>" +
-                              "Please ensure the path is correct in the Settings.",
-  arduinoOpErrorIdContext_54: "What should we do with the Sketch?<br>" +
-                              "The launch IDE option has not been set.<br>" +
-                              "Please select an IDE option in the Settings.",
-  arduinoOpErrorIdContext_55: "Serial Port unavailable<br>" +
-                              "The Serial Port is not accessible.<br>" +
-                              "Please check if the Arduino is correctly connected to the PC and select the Serial Port in the Settings.",
-  arduinoOpErrorIdContext_56: "Unknown Arduino Board<br>" +
-                              "The Arduino Board has not been set.<br>" +
-                              "Please select the appropriate Arduino Board from the settings.",
-  arduinoOpErrorIdContext_52: "Unexpected server error.",
-  arduinoOpErrorIdContext_64: "Unable to parse sent JSON.",
-  arduinoOpErrorUnknown: "Unexpected error",
+  arduinoOpErrorIdContext_53: "Arduino IDE nicht auffindbar<br>" +
+                              "Das Kompiliererverzeichnis ist nicht korrekt eingestellt.<br>" +
+                              "Bitte überprüfe den korrekten Pfad für den Kompilierer in Settings.",
+  arduinoOpErrorIdContext_54: "Was soll mit dem Sketch gemacht werden?<br>" +
+                              "Das Arduino IDE Programm Option ist noch nicht eingestellt.<br>" +
+                              "Bitte wähle die Arduino IDE Option in Settings.",
+  arduinoOpErrorIdContext_55: "Serial Port nicht verfügbar<br>" +
+                              "Das Serial Port ist nicht erreichbar.<br>" +
+                              "Bitte überprüfe, ob der Arduino mit dem Computer verbunden ist und wähle das richtige Serial Port in Settings.",
+  arduinoOpErrorIdContext_56: "Unbekanntes Arduino Board<br>" +
+                              "Das Arduino Board wurde noch nicht definiert.<br>" +
+                              "Bitte wähle das richtige Arduino Board von Settings.",
+  arduinoOpErrorIdContext_52: "Unerwarteter Server Fehler.",
+  arduinoOpErrorIdContext_64: "Unmöglich den zu JSON gesendeten Code zu analysieren.",
+  arduinoOpErrorUnknown: "Unerwarteter Fehler",
   /* Modals */
   noServerTitle: "Ardublockly app not running",
-  noServerTitleBody: "<p>For all the Ardublockly features to be enabled, the Ardublockly desktop application must be running locally on your computer.</p>" +
-                     "<p>If you are using an online version you will not be able to configure the settings nor load the blocks code into an Arduino.</p>" +
-                     "<p>Installation instruction can be found in the <a href=\"https://github.com/carlosperate/ardublockly\">Ardublockly repository</a>.</p>" +
+  noServerTitleBody: "<p>Um alle Ardublockly Features zu nutzen, ist es notwendig diese Software auf einem lokalen Computer zu benutzen.</p>" +
+                     "<p>Falls dies eine Online Version ist, wirst Du die Settings nicht speichern und/oder den Code nicht auf den Arduino laden können.</p>" +
+                     "<p>Installationshinweise hier >> <a href=\"https://gitlab.com/DigitalStages/ardublockly\">Ardublockly repository</a>.</p>" +
                      "<p>Wenn Ardublockly bereits installiert ist, lese die Installationsdokumentation.</p>",
   noServerNoLangBody: "Wenn die Ardublockly Applikation nicht läuft, kann die Sprache nicht vollständig geändert werden.",
   addBlocksTitle: "Zusätzliche Blöcke",
@@ -81,7 +81,7 @@ Ardublockly.LOCALISED_TEXT = {
   verifySketch: "Verifiziere den Sketch",
   openingSketch: "Öffne Sketch in der Arduino IDE...",
   openSketch: "Öffne Sketch in IDE",
-  notImplemented: "Function not yet implemented",
+  notImplemented: "Funktion noch nicht implementiert",
   /* Prompts */
   ok: "OK",
   okay: "Okay",
@@ -96,13 +96,13 @@ Ardublockly.LOCALISED_TEXT = {
   catMath: "Mathe",
   catText: "Text",
   catVariables: "Variable",
-  catFunctions: "FunKtion",
+  catFunctions: "Funktion",
   catInputOutput: "Eingang/Ausgang",
   catTime: "Zeit",
   catAudio: "Audio",
   catMotors: "Motor",
   catComms: "Kommunikation",
   catSensors: "Sensor",
-  catDiplays: "Bildschirm",
+  catDisplays: "Bildschirm",
   catVarious: "Verschieden",
 };

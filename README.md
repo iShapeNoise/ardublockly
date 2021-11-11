@@ -1,7 +1,7 @@
 # Ardublockly
 Ardublockly is a visual programming editor for Arduino. It is based on Google's [Blockly][1], which has been forked to generate [Arduino][15] code.
 
-The `ArdublocklyServer` Python package initialises a local server to be able to compile and load the Arduino code using the [Arduino IDE][2].
+The `ArdublocklyServer` Python package initialises a local server to be able to compile and load the Arduino code using the [Arduino IDE](https://www.arduino.cc/en/Main/Software_)).
 
 Therefore, it is executable on most OS including Linux, Mac, Windows, and Android (limited).
 
@@ -55,8 +55,7 @@ The limitation comes with uploading Blockly codes to the Arduino board. First yo
 ## Credit
 This project has been inspired by [ArduBlockly](https://github.com/carlosperate/ardublockly) developed by [Carlos Pereira Atencio](https://www.embeddedlog.com/).
 
-Blockly original source is Copyright of Google Inc. [https://developers.google.com/blockly/][1]. A list of changes to the Blockly fork can be found in the [Blockly subdirectory README][17] file.
-
+Blockly original source is Copyright of [Google Inc.](https://developers.google.com/blockly/).
 
 ## License
 Unless stated otherwise, the source code of this projects is
@@ -64,7 +63,7 @@ licensed under the Apache License, Version 2.0 (the "License");
 you may not use any of the licensed files within this project
 except in compliance with the License.
 
-The full document can be found in the [LICENSE][9] file.
+The full document can be found in the [LICENSE](https://gitlab.com/DigitalStages/ardublockly/-/blob/main/LICENSE) file.
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,
