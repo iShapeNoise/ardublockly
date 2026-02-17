@@ -1,5 +1,9 @@
 name: Sync to GitLab
-on: [push]
+on:
+  push:
+    branches:
+      - main  # or master, depending on your default branch
+
 jobs:
   sync:
     runs-on: ubuntu-latest
@@ -12,5 +16,4 @@ jobs:
         with:
           gitlab_url: ${{ secrets.GITLAB_URL }}
           username: ${{ secrets.USERNAME }}
-          gitlab_pat: ${{ secrets.GITLAB_PAT }}
-
+          gitlab_pat: ${{ secrets.GITLAB_PAT }}   
