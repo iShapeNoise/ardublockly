@@ -10,8 +10,6 @@ import subprocess
 import locale
 import sys
 import os
-# local-packages imports
-import six
 # This package modules
 from ardublocklyserver.compilersettings import ServerCompilerSettings
 from ardublocklyserver import sketchcreator

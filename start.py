@@ -9,7 +9,6 @@ Licensed under the Apache License, Version 2.0 (the "License"):
 from __future__ import unicode_literals, absolute_import, print_function
 import os
 import re
-import sys
 import struct
 import getopt
 import platform
@@ -18,6 +17,11 @@ import webbrowser
 
 import ardublocklyserver.server
 import ardublocklyserver.compilersettings
+
+import sys
+print("Python path:")
+for p in sys.path:
+    print(f"  {p}")
 
 # Server IP and PORT settings
 SERVER_IP = 'localhost'

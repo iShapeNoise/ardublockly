@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*- #
 #
 # Creates a zip file of the self executable Ardublockly application.
@@ -46,7 +46,7 @@ project_root_dir = \
     os.path.dirname(                                  # going up 1 level
         os.path.dirname(os.path.realpath(__file__)))  # folder dir of this
 
-# This script copies the ardublockly folder with a different name on the same 
+# This script copies the ardublockly folder with a different name on the same
 # directory level to easily filter what to included in the packed version
 copy_dir_name = None
 copied_project_dir = None

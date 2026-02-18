@@ -11,8 +11,6 @@ import sys
 # local-packages imports
 from bottle import request, response
 from bottle import static_file, run, default_app, redirect, abort
-# Python 2 and 3 compatibility imports
-from six import iteritems
 # This package modules
 from ardublocklyserver import actions
 
@@ -178,12 +176,12 @@ def handler_settings_get_all():
             }, {
                 'settings_type': 'serial',
                 'options': [{'value': k, 'display_text': v}
-                            for k, v in iteritems(actions.get_serial_ports())],
+                            for k, v in actions.get_serial_ports().items()],
                 'selected': actions.get_serial_port_selected()
             }, {
                 'settings_type': 'ide',
                 'options': [{'value': k, 'display_text': v} for k, v in
-                            iteritems(actions.get_load_ide_options())],
+                            actions.get_load_ide_options().items()],
                 'selected': actions.get_load_ide_selected()
             }]
         }
@@ -219,12 +217,12 @@ def handler_settings_get_individual(name):
     elif name == 'serial':
         response_dict.update({
             'options': [{'value': k, 'display_text': v}
-                        for k, v in iteritems(actions.get_serial_ports())],
+                        for k, v in actions.get_serial_ports().items()],
             'selected': actions.get_serial_port_selected()})
     elif name == 'ide':
         response_dict.update({
             'options': [{'value': k, 'display_text': v}
-                        for k, v in iteritems(actions.get_load_ide_options())],
+                        for k, v in actions.get_load_ide_options().items()],
             'selected': actions.get_load_ide_selected()})
     else:
         success = False
@@ -321,11 +319,11 @@ def handler_settings_update_individual(name):
             elif name == 'serial':
                 set_value = actions.set_serial_port(new_value)
                 options = [{'value': k, 'display_text': v}
-                           for k, v in iteritems(actions.get_serial_ports())]
+                           for k, v in actions.get_serial_ports().items()]
             elif name == 'ide':
                 set_value = actions.set_load_ide_only(new_value)
                 options = [{'value': k, 'display_text': v} for k, v in
-                           iteritems(actions.get_load_ide_options())]
+                           actions.get_load_ide_options().items()]
             else:
                 response_dict.update({'success': False,
                                       'settings_type': 'invalid'})

@@ -16,7 +16,7 @@ sys.path.insert(0, local_packages)
 
 # Import required modules, ensures PyInstaller fails if it cannot find them
 import ardublockly
-import six, configparser, serial, waitress, bottle
+import configparser, serial, waitress, bottle
 
 
 block_cipher = None

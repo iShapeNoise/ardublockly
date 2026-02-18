@@ -16,9 +16,6 @@ This version focuses on the ArdublocklyServer version of [ArduBlockly](https://g
 * Compatible with a wide range of official Arduino Boards
 * Works on Windows / Linux / Mac OS X / Android (limited)
 
-Ardublockly is still under development and a few features are not yet implemented.
-
-Currently tested under Windows with Python 2.7 and 3.4 and in Linux and MacOS X with Python 2.7.
 
 ## Cloning the repository
 Please note that there are submodules in the repository that need initialisation. So, to correctly clone the Ardublockly repository:
@@ -40,7 +37,7 @@ python3 start.py
 ```
 5. This will load the web interface on your local browser.
 
-This will work on Windows, Linux (including ARM), Mac OS X, with Python >2.7 or >3.4
+This will work on Windows, Linux (including ARM), Mac OS X, with >3.4
 
 ## Installing on Android
 

@@ -13,9 +13,7 @@ import shutil
 import unittest
 import requests
 from time import sleep
-# local-packages imports Python 2 and 3 compatibility imports
-from six.moves import _thread as thread
-from six import iteritems
+import _thread as thread
 # This package modules
 try:
     from ardublocklyserver import server

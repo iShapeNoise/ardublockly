@@ -23,10 +23,6 @@ except (NameError, AttributeError):
     class memoryview(object):   # pylint: disable=redefined-builtin,invalid-name
         pass
 
-try:
-    unicode
-except (NameError, AttributeError):
-    unicode = str       # for Python 3, pylint: disable=redefined-builtin,invalid-name
 
 try:
     basestring
@@ -59,10 +55,10 @@ def to_bytes(seq):
         return bytes(seq)
     elif isinstance(seq, memoryview):
         return seq.tobytes()
-    elif isinstance(seq, unicode):
+    elif isinstance(seq, str):  # Python 3 string (unicode)
         raise TypeError('unicode strings are not supported, please encode to bytes: {!r}'.format(seq))
     else:
-        # handle list of integers and bytes (one or more items) for Python 2 and 3
+        # handle list of integers and bytes (one or more items)
         return bytes(bytearray(seq))
 
 

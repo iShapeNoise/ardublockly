@@ -84,13 +84,6 @@ If you have already downloaded the Ardublockly source code, make sure the submod
 ### First step: Blockly
 When Blockly is compiled, all the source code contained in the `blockly` folder is compressed in the `blockly/blockly_compressed.js`, `blockly/blocks_compressed.js`, and  `blockly/arduino_compressed.js` files (among others). The repository version of these compressed files might not be the most up-to-date, so the first step should be to compile Blockly to ensure the compressed files are up-to-date.  
 
-You will need Python 2.7 for this step, as the Blockly build script is not currently compatible with Python 3. You will also need to be online, as the Google's "Closure Compiler Service" is used. From the project root directory:
-
-```
-cd blockly
-python build.py
-```
-
 At this point, if continuing with the next steps, it is recommended to go back to the project root directory:
 
 ```

@@ -8,8 +8,6 @@ Licensed under the Apache License, Version 2.0 (the "License"):
 from __future__ import unicode_literals, absolute_import, print_function
 import codecs
 import os
-# local-packages imports
-import six
 
 
 # Default blinky sketch
@@ -43,8 +41,8 @@ def create_sketch(sketch_dir, sketch_name=default_sketch_name,
              Return None indicates an error has occurred.
     """
     # Check the code first, to not create sketch file if invalid
-    if not isinstance(sketch_code, six.string_types) or \
-            not isinstance(sketch_name, six.string_types):
+    if not isinstance(sketch_code, str) or \
+            not isinstance(sketch_name, str):
         print('The sketch name or code given is not a valid string !!!')
         return None
     # Create the sketch path

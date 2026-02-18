@@ -22,10 +22,6 @@ import codecs
 import serial
 
 
-try:
-    unicode
-except (NameError, AttributeError):
-    unicode = str       # for Python 3, pylint: disable=redefined-builtin,invalid-name
 
 
 HEXDIGITS = '0123456789ABCDEF'
@@ -40,7 +36,7 @@ def hex_encode(data, errors='strict'):
 
 def hex_decode(data, errors='strict'):
     """b'@ab' -> '40 41 42'"""
-    return (unicode(''.join('{:02X} '.format(ord(b)) for b in serial.iterbytes(data))), len(data))
+    return (str(''.join('{:02X} '.format(ord(b)) for b in serial.iterbytes(data))), len(data))
 
 
 class Codec(codecs.Codec):
@@ -50,7 +46,7 @@ class Codec(codecs.Codec):
 
     def decode(self, data, errors='strict'):
         """b'@ab' -> '40 41 42'"""
-        return unicode(''.join('{:02X} '.format(ord(b)) for b in serial.iterbytes(data)))
+        return str(''.join('{:02X} '.format(ord(b)) for b in serial.iterbytes(data)))
 
 
 class IncrementalEncoder(codecs.IncrementalEncoder):
@@ -99,7 +95,7 @@ class IncrementalEncoder(codecs.IncrementalEncoder):
 class IncrementalDecoder(codecs.IncrementalDecoder):
     """Incremental decoder"""
     def decode(self, data, final=False):
-        return unicode(''.join('{:02X} '.format(ord(b)) for b in serial.iterbytes(data)))
+        return str(''.join('{:02X} '.format(ord(b)) for b in serial.iterbytes(data)))
 
 
 class StreamWriter(Codec, codecs.StreamWriter):
